@@ -161,9 +161,14 @@ main .number-of-todos {
   cursor: pointer;
 }
 
+.new-todo {
+  margin-top: 2rem;
+}
+
 .new-todo .new-todo-input {
   width: 220px;
   height: 30px;
+  color: #6e4499;
   border: none;
   border-radius: 4px;
   padding: 0 8px;
