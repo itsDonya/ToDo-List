@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <header>
+        <div class="title">
+            <h1 id="title">To-Do App</h1>
+            <p>What do you need to do?</p>
+        </div>
+
+        <div class="filters">
+            <div class="filter">
+                <input id="all-todos" type="radio" name="filter">
+                <label for="all-todos" class="all-todos">All</label>
+            </div>
+            
+            <div class="filter">
+                <input id="completed-todos" type="radio" name="filter">
+                <label for="completed-todos" class="completed-todos">Completed</label>
+            </div>
+
+            <div class="filter">
+                <input id="uncompleted-todos" type="radio" name="filter">
+                <label for="uncompleted-todos" class="uncompleted-todos">Uncompleted</label>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+
+        <h2 class="number-of-todos">You have 3 todos left</h2>
+
+        <div>
+            <ul class="todo-list">
+                <li class="todo">
+                    <div>
+                        <input type="checkbox" id="todo-1">
+                        <label for="todo-1">Finish React course</label>
+                    </div>
+                    <button class="remove-btn">Remove</button>
+                </li>
+
+                <li class="todo">
+                    <div>
+                        <input type="checkbox" id="todo-2">
+                        <label for="todo-2">Finish Js [Jonas] course</label>
+                    </div>
+                    <button class="remove-btn">Remove</button>
+                </li>
+
+                <li class="todo">
+                    <div>
+                        <input type="checkbox" id="todo-3">
+                        <label for="todo-3">Solve Image Editor project problems</label>
+                    </div>
+                    <button class="remove-btn">Remove</button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="new-todo">
+            <input type="text" class="new-todo-input" placeholder="New ToDo">
+            <button class="new-todo-btn">Submit</button>
+        </div>
+
+    </main>
+    
+</body>
+</html>

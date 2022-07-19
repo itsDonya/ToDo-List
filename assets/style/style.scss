@@ -1,0 +1,126 @@
+@import "./mixins";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #222329;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title, .filters {
+    padding: 0 6rem;
+}
+
+header {
+    color: #ffffff;
+    background-color: #6e4499;
+    
+    .title {
+        @include flex(column, center, start);
+        height: 100px;
+        #title {
+            font-size: 22px;
+        }
+    }
+
+    .filters {
+        height: 46px;
+        @include flex(row, space-between, center);
+        background-color: #313338;
+
+        input {
+            @include sizing(10px, 10px);
+            appearance: unset;
+            background-color: #dddddd;
+            border-radius: 50%;
+            transition: all .1s ease-in-out;
+            cursor: pointer;
+            &:checked {
+                background-color: #6e4499;
+            }
+            &:checked + label {
+                color: #9054cd;
+            }
+        }
+
+        label {
+            cursor: pointer;
+            transition: all .1s ease-in-out;
+        }
+    }
+}
+
+main {
+    padding: 2rem 6rem;
+
+    .number-of-todos {
+        color: #d9d9d9;
+    }
+}
+
+.todo-list {
+    list-style: none;
+    @include flex(column, space-between, center);
+    gap: 14px;
+    margin: 1rem 0;
+
+    .todo {
+        @include sizing(100%, 56px);
+        @include flex(row, space-between, center);
+        background-color: #313338;
+        border-radius: 6px;
+        input {
+            appearance: unset;
+            @include sizing(12px, 12px);
+            background-color: #bbbbbb;
+            margin: 0 1rem;
+            border-radius: 2px;
+            cursor: pointer;
+            &:checked {
+                background-color: #bbbbbb10;
+            }
+        }
+        label {
+            color: #bbbbbb;
+            cursor: pointer;
+        }
+        button {
+            margin: 0 1rem;
+            color: #aaaaaa;
+            background-color: inherit;
+            border: none;
+            cursor: pointer;
+        }
+    }
+}
+
+.new-todo {
+    .new-todo-input {
+        @include sizing(220px, 30px);
+        border: none;
+        border-radius: 4px;
+        padding: 0 8px;
+        &:focus {
+            outline: none;
+        }
+        &::placeholder {
+            color: #6e4499
+        }
+    }
+    .new-todo-btn {
+        @include sizing(82px, 32px);
+        color: #ffffff;
+        background-color: #6e4499;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-left: 2px;
+        &:hover {
+            filter: brightness(96%);
+        }
+    }
+}
