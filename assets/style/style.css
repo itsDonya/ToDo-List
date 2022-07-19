@@ -209,4 +209,8 @@ main .number-of-todos {
   -webkit-filter: brightness(96%);
           filter: brightness(96%);
 }
+
+.new-todo .new-todo-btn:focus {
+  outline: none;
+}
 /*# sourceMappingURL=style.css.map */

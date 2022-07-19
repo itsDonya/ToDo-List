@@ -11,9 +11,8 @@ class Todo {
 // Create new todo
 const newTodo = document.querySelector(".new-todo-input");
 const newTodoBtn = document.querySelector(".new-todo-btn");
-// let ToDo;
 
-newTodoBtn.addEventListener("click", () => {
+function addItem() {
     const name = newTodo.value;
     // Check if input is empty
     if (name) {
@@ -22,6 +21,14 @@ newTodoBtn.addEventListener("click", () => {
         showItems();
     }
     newTodo.value = "";
+}
+
+
+newTodoBtn.addEventListener("click", addItem);
+window.addEventListener("keydown", (e) => {
+    if(e.key==="Enter") {
+        addItem();
+    }
 })
 
 // Show Todos
