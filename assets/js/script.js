@@ -66,6 +66,9 @@ function showItems() {
 
         // Add event to checkbox
         checkItem(checkbox, todoName, todo);
+
+        // Remove ToDo from List
+        removeItem(removeBtn, todoItem, todo);
     })
 }
 
@@ -80,6 +83,14 @@ function checkItem(checkbox, name, todo) {
             todo.isChecked = false;
             localStorage.setItem("todos", JSON.stringify(todos));
         }
+    })
+}
+
+function removeItem(button, todoItem, todoClass) {
+    button.addEventListener("click", () => {
+        todos.splice(todos.indexOf(todoClass), 1);
+        localStorage.setItem("todos", JSON.stringify(todos));
+        todoItem.remove();
     })
 }
 
