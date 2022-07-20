@@ -148,3 +148,22 @@ main {
         }
     }
 }
+
+@media(max-width:500px) {
+    .title, .filters {
+        padding: 0 1.4rem;
+    }
+    .filters {
+        font-size: 14px;
+
+        input {
+            @include sizing(6px, 6px);
+        }
+    }
+    main {
+        padding: 2rem 1.4rem;
+        .number-of-todos {
+            font-size: 16px;
+        }
+    }
+}
