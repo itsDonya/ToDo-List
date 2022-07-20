@@ -24,7 +24,9 @@ showNumberOfTodos();
 // Load stuff from Local Storage
 if(localStorage.getItem("todos")) {
     todos = JSON.parse(localStorage.getItem("todos"))
-    todoCount = todos.length;
+    todos.filter(todo => {
+        if(!todo.isChecked) todoCount ++;
+    })
     showNumberOfTodos();
 }
 
@@ -100,6 +102,8 @@ function checkItem(checkbox, name, todo) {
         } else {
             name.style.textDecoration = "none";
             todo.isChecked = false;
+            todoCount ++;
+            showNumberOfTodos();
             localStorage.setItem("todos", JSON.stringify(todos));
         }
     })
@@ -109,8 +113,10 @@ function removeItem(button, todoItem, todoClass) {
     button.addEventListener("click", () => {
         todos.splice(todos.indexOf(todoClass), 1);
         localStorage.setItem("todos", JSON.stringify(todos));
-        todoCount --;
-        showNumberOfTodos();
+        if(!todoClass.isChecked) {
+            todoCount --;
+            showNumberOfTodos();
+        }
         todoItem.remove();
     })
 }
@@ -148,6 +154,9 @@ function filterCompletedItems() {
             showItems(filterList);
         }
     })
+    if(filterList.length === 0) {
+        todoList.innerHTML = "";
+    }
 }
 
 function filterUncompletedItems() {
@@ -158,4 +167,7 @@ function filterUncompletedItems() {
             showItems(filterList);
         }
     })
+    if(filterList.length === 0) {
+        todoList.innerHTML = "";
+    }
 }
