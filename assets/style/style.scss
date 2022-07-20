@@ -57,8 +57,27 @@ header {
 main {
     padding: 2rem 6rem;
 
+    div:nth-child(1) {
+        @include flex(row, space-between, center)
+    }
+
     .number-of-todos {
         color: #d9d9d9;
+        display: inline-block;
+    }
+
+    .remove-all {
+        color: #6e4499;
+        background-color: inherit;
+        border: 1px solid #6e4499;
+        padding: 0.5rem 0.8rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+            color: #ffffff;
+            background-color: #6e4499;
+        }
     }
 }
 

@@ -89,8 +89,41 @@ main {
   padding: 2rem 6rem;
 }
 
+main div:nth-child(1) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 main .number-of-todos {
   color: #d9d9d9;
+  display: inline-block;
+}
+
+main .remove-all {
+  color: #6e4499;
+  background-color: inherit;
+  border: 1px solid #6e4499;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+main .remove-all:hover {
+  color: #ffffff;
+  background-color: #6e4499;
 }
 
 .todo-list {

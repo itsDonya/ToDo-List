@@ -171,3 +171,13 @@ function filterUncompletedItems() {
         todoList.innerHTML = "";
     }
 }
+
+// Remove All ToDos
+const removeAllBtn = document.querySelector(".remove-all");
+removeAllBtn.addEventListener("click", () => {
+    todos.length = 0;
+    localStorage.setItem("todos", JSON.stringify(todos));
+    todoCount = 0;
+    showNumberOfTodos();
+    todoList.innerHTML = "";
+})
