@@ -181,3 +181,13 @@ removeAllBtn.addEventListener("click", () => {
     showNumberOfTodos();
     todoList.innerHTML = "";
 })
+
+// Switch Theme
+const switchTheme = document.getElementById("theme");
+switchTheme.addEventListener("change", (e) => {
+    if(e.target.checked) {
+        document.documentElement.setAttribute("theme", "dark");
+    } else {
+        document.documentElement.setAttribute("theme", "light");
+    }
+})
